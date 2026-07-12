@@ -6,13 +6,16 @@ let currentDbId = null;
 let currentSchoolName = '';
 let currentUserEmail = '';
 let isDeveloper = false;
-
 /**
- * Login user
+ * Login user - VERSION IMARA KWA UCHUNGUZI
  */
 function login() {
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value;
+  
+  console.log('🔐 Login button clicked');
+  console.log('📧 Email:', email);
+  console.log('🔑 Password length:', password ? password.length : 0);
   
   if (!email || !password) {
     Swal.fire({
@@ -24,11 +27,28 @@ function login() {
     return;
   }
   
-  Notiflix.Loading.standard('Inaingiza...');
+  // First, test if API is reachable
+  console.log('🧪 Testing API connection first...');
   
-  loginUser(email, password)
+  Notiflix.Loading.standard('Inajaribu kuwasiliana na server...');
+  
+  testApiConnection()
+    .then(testData => {
+      console.log('✅ API test result:', testData);
+      
+      if (testData.status === 'success') {
+        console.log('✅ API is reachable! Proceeding with login...');
+        Notiflix.Loading.standard('Inaingiza...');
+        return loginUser(email, password);
+      } else {
+        console.error('❌ API test failed:', testData);
+        Notiflix.Loading.remove();
+        throw new Error('API is not responding correctly. Response: ' + JSON.stringify(testData));
+      }
+    })
     .then(data => {
       Notiflix.Loading.remove();
+      console.log('📨 Login response:', data);
       
       if (data.status === 'success') {
         handleSuccessfulLogin(data, email);
@@ -38,21 +58,46 @@ function login() {
         Swal.fire({
           icon: 'error',
           title: 'Kuingia Kumeshindikana',
-          text: data.message,
+          text: data.message || 'Hitilafu isiyojulikana',
           confirmButtonColor: '#4361ee'
         });
       }
     })
     .catch(error => {
       Notiflix.Loading.remove();
+      console.error('❌ Login error:', error);
+      
+      // Show detailed error
       Swal.fire({
         icon: 'error',
         title: 'Hitilafu ya Mtandao',
-        text: 'Imeshindikana kuwasiliana na server',
-        confirmButtonColor: '#4361ee'
+        html: `
+          <div style="text-align: left;">
+            <p><strong>Imeshindikana kuwasiliana na server.</strong></p>
+            <p style="font-size: 14px; color: #666; margin-top: 10px;">
+              <strong>Error:</strong> ${error.message || 'Unknown error'}
+            </p>
+            <p style="font-size: 14px; color: #666; margin-top: 5px;">
+              <strong>SCRIPT_URL:</strong> ${CONFIG.SCRIPT_URL}
+            </p>
+            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin-top: 10px;">
+              <p style="font-size: 12px; color: #666;">
+                <strong>Maelekezo:</strong><br>
+                1. Hakikisha SCRIPT_URL ni sahihi kwenye config.js<br>
+                2. Hakikisha Apps Script ime-deploy kama Web App<br>
+                3. Hakikisha "Who has access" ni "Anyone"<br>
+                4. Angalia console kwa maelezo zaidi
+              </p>
+            </div>
+          </div>
+        `,
+        confirmButtonColor: '#4361ee',
+        confirmButtonText: 'Sawa',
+        width: '550px'
       });
     });
 }
+
 
 /**
  * Handle successful login

@@ -4,7 +4,7 @@
 
 const CONFIG = {
   // API endpoint - replace with your deployed Apps Script URL
-  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbwbls4KtY7J5M507xHtRVizXhMITPoHle-jQe4zTbxapKOHde69KAcl9saXtQA2YE-b/exec',
+  SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbytLWJUSuUKDMqY0QDPgHkygu-8O5efCv2uIiOlTLxElUF87hOdVfF_TIYDBs242W80/exec',
   
   // Developer credentials
   DEVELOPER_EMAIL: 'daxsystems.tz@gmail.com',

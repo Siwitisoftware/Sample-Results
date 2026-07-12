@@ -1,0 +1,577 @@
+/* ============================================
+   TABLE STYLES
+   ============================================ */
+
+/* ============================================
+   TABLE CONTAINER
+   ============================================ */
+.table-container {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--white);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Results table specific - no horizontal scroll with blue borders */
+#resultsDashboard .table-container {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  border-color: rgba(67, 97, 238, 0.6) !important;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* ============================================
+   GENERAL TABLE
+   ============================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: var(--white);
+  min-width: 600px;
+}
+
+/* Results table specific styling */
+#resultsTable {
+  min-width: auto;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid rgba(67, 97, 238, 0.5);
+  border-radius: var(--radius);
+}
+
+/* ============================================
+   TABLE HEADERS
+   ============================================ */
+th {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  font-weight: 600;
+  color: white;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.3;
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+/* Results table headers with borders */
+#resultsTable th {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  min-width: 80px;
+  max-width: 200px;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(67, 97, 238, 0.7);
+}
+
+/* Subject column header */
+#resultsTable th:nth-child(3) {
+  min-width: 100px;
+  max-width: 250px;
+}
+
+/* General table headers */
+table th {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  max-width: 200px;
+  min-width: 80px;
+}
+
+/* ============================================
+   TABLE CELLS
+   ============================================ */
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+/* Results table cells with blue borders */
+#resultsTable td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(67, 97, 238, 0.4);
+  border-right: 1px solid rgba(67, 97, 238, 0.25);
+  vertical-align: middle;
+}
+
+/* Gender column in results table - CENTER ALIGNED */
+#resultsTable td:nth-child(2) {
+  text-align: center !important;
+}
+
+/* Name column in results table - left aligned */
+#resultsTable td:first-child {
+  text-align: left;
+}
+
+/* Remove right border from last column in results table */
+#resultsTable th:last-child,
+#resultsTable td:last-child {
+  border-right: none;
+}
+
+/* Remove left border from first column in results table */
+#resultsTable td:first-child,
+#resultsTable th:first-child {
+  border-left: none;
+}
+
+/* Row hover effect for results table */
+#resultsTable tr:hover td {
+  background-color: rgba(67, 97, 238, 0.05);
+  border-bottom-color: rgba(67, 97, 238, 0.6);
+}
+
+/* General row hover */
+tr:hover {
+  background-color: rgba(67, 97, 238, 0.03);
+}
+
+/* ============================================
+   SCORE INPUT
+   ============================================ */
+#resultsTable .score-input {
+  width: 100%;
+  max-width: 100px;
+  padding: 8px;
+  text-align: center !important;
+  border: 2px solid rgba(67, 97, 238, 0.35);
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+#resultsTable .score-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
+}
+
+/* Ensure the cell containing score input is also centered */
+#resultsTable td:last-child {
+  text-align: center !important;
+}
+
+/* For the subject column cell - center the input */
+#resultsTable td:nth-child(3) {
+  text-align: center !important;
+}
+
+/* ============================================
+   REPORT TABLE - DISABLE SELECTION
+   ============================================ */
+#reportTable {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#reportTable th,
+#reportTable td {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#reportTable input,
+#reportTable textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+.report-section {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#reportDashboard .table-container {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ============================================
+   SUBJECT GRADE COLORS IN TABLES
+   ============================================ */
+.subject-grade .grade-A,
+.subject-grade small.grade-A,
+.subject-grade small.grade-a {
+  color: #1b5e20 !important;
+}
+
+.subject-grade .grade-B,
+.subject-grade small.grade-B,
+.subject-grade small.grade-b {
+  color: #4caf50 !important;
+}
+
+.subject-grade .grade-C,
+.subject-grade small.grade-C,
+.subject-grade small.grade-c {
+  color: #ffeb3b !important;
+}
+
+.subject-grade .grade-D,
+.subject-grade small.grade-D,
+.subject-grade small.grade-d {
+  color: #ff9800 !important;
+}
+
+.subject-grade .grade-E,
+.subject-grade small.grade-E,
+.subject-grade small.grade-e {
+  color: #f44336 !important;
+}
+
+/* ============================================
+   MAIN GRADE COLORS
+   ============================================ */
+.main-grade-A {
+  color: #1b5e20 !important;
+  font-weight: bold;
+}
+
+.main-grade-B {
+  color: #4caf50 !important;
+  font-weight: bold;
+}
+
+.main-grade-C {
+  color: #ffeb3b !important;
+  font-weight: bold;
+}
+
+.main-grade-D {
+  color: #ff9800 !important;
+  font-weight: bold;
+}
+
+.main-grade-E {
+  color: #f44336 !important;
+  font-weight: bold;
+}
+
+/* ============================================
+   REPORT TABLE GRADE COLORS
+   ============================================ */
+#reportTable .main-grade-A {
+  color: #1b5e20 !important;
+  font-weight: bold;
+}
+
+#reportTable .main-grade-B {
+  color: #4caf50 !important;
+  font-weight: bold;
+}
+
+#reportTable .main-grade-C {
+  color: #ffeb3b !important;
+  font-weight: bold;
+}
+
+#reportTable .main-grade-D {
+  color: #ff9800 !important;
+  font-weight: bold;
+}
+
+#reportTable .main-grade-E {
+  color: #f44336 !important;
+  font-weight: bold;
+}
+
+/* Subject grade colors in report table */
+#reportTable .subject-grade .grade-A {
+  color: #1b5e20 !important;
+}
+
+#reportTable .subject-grade .grade-B {
+  color: #4caf50 !important;
+}
+
+#reportTable .subject-grade .grade-C {
+  color: #ffeb3b !important;
+}
+
+#reportTable .subject-grade .grade-D {
+  color: #ff9800 !important;
+}
+
+#reportTable .subject-grade .grade-E {
+  color: #f44336 !important;
+}
+
+/* ============================================
+   STATS TABLE GRADES
+   ============================================ */
+.stats-table .grade-A { color: #1b5e20 !important; font-weight: bold; }
+.stats-table .grade-B { color: #4caf50 !important; font-weight: bold; }
+.stats-table .grade-C { color: #ffeb3b !important; font-weight: bold; }
+.stats-table .grade-D { color: #ff9800 !important; font-weight: bold; }
+.stats-table .grade-E { color: #f44336 !important; font-weight: bold; }
+
+/* Subject performance table proficiency column */
+.subject-stats-table .grade-A { color: #1b5e20 !important; font-weight: bold; }
+.subject-stats-table .grade-B { color: #4caf50 !important; font-weight: bold; }
+.subject-stats-table .grade-C { color: #ffeb3b !important; font-weight: bold; }
+.subject-stats-table .grade-D { color: #ff9800 !important; font-weight: bold; }
+.subject-stats-table .grade-E { color: #f44336 !important; font-weight: bold; }
+
+/* Results table subject grades */
+#resultsTable .subject-grade .grade-A { color: #1b5e20 !important; }
+#resultsTable .subject-grade .grade-B { color: #4caf50 !important; }
+#resultsTable .subject-grade .grade-C { color: #ffeb3b !important; }
+#resultsTable .subject-grade .grade-D { color: #ff9800 !important; }
+#resultsTable .subject-grade .grade-E { color: #f44336 !important; }
+
+/* ============================================
+   GRADE BACKGROUND HELPERS
+   ============================================ */
+.bg-grade-A { background-color: #1b5e20; color: white; }
+.bg-grade-B { background-color: #4caf50; color: white; }
+.bg-grade-C { background-color: #ffeb3b; color: black; }
+.bg-grade-D { background-color: #ff9800; color: white; }
+.bg-grade-E { background-color: #f44336; color: white; }
+
+.border-grade-A { border-left: 3px solid #1b5e20; }
+.border-grade-B { border-left: 3px solid #4caf50; }
+.border-grade-C { border-left: 3px solid #ffeb3b; }
+.border-grade-D { border-left: 3px solid #ff9800; }
+.border-grade-E { border-left: 3px solid #f44336; }
+
+/* ============================================
+   CACHE INDICATOR
+   ============================================ */
+.cache-indicator {
+  text-align: center;
+  padding: 8px;
+  background: #ffeb3b;
+  color: #333;
+  font-size: 12px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* ============================================
+   COLUMN WIDTHS
+   ============================================ */
+/* Students table */
+#studentsTable th:first-child,
+#studentsTable td:first-child { width: 50px; text-align: center; }
+#studentsTable th:nth-child(2),
+#studentsTable td:nth-child(2) { width: auto; }
+#studentsTable th:nth-child(3),
+#studentsTable td:nth-child(3) { width: 80px; text-align: center; }
+#studentsTable th:nth-child(4),
+#studentsTable td:nth-child(4) { width: 150px; text-align: center; }
+#studentsTable th:nth-child(5),
+#studentsTable td:nth-child(5) { width: 200px; text-align: center; }
+
+/* Subjects table */
+#subjectsTable th:first-child,
+#subjectsTable td:first-child { width: 50px; text-align: center; }
+#subjectsTable th:nth-child(2),
+#subjectsTable td:nth-child(2) { width: auto; }
+#subjectsTable th:nth-child(3),
+#subjectsTable td:nth-child(3) { width: 200px; text-align: center; }
+
+/* Staff table */
+#staffTable th:first-child,
+#staffTable td:first-child { width: auto; }
+#staffTable th:nth-child(2),
+#staffTable td:nth-child(2) { width: auto; }
+#staffTable th:nth-child(3),
+#staffTable td:nth-child(3) { width: 120px; text-align: center; }
+#staffTable th:nth-child(4),
+#staffTable td:nth-child(4) { width: 180px; text-align: center; }
+
+/* Exit sheets table */
+.exit-sheets-table th:first-child,
+.exit-sheets-table td:first-child { width: auto; }
+.exit-sheets-table th:nth-child(2),
+.exit-sheets-table td:nth-child(2) { width: 120px; text-align: center; }
+.exit-sheets-table th:nth-child(3),
+.exit-sheets-table td:nth-child(3) { width: 100px; text-align: center; }
+.exit-sheets-table th:nth-child(4),
+.exit-sheets-table td:nth-child(4) { width: 100px; text-align: center; }
+.exit-sheets-table th:nth-child(5),
+.exit-sheets-table td:nth-child(5) { width: 150px; text-align: center; }
+
+/* Users table (Developer) */
+#usersTableBody td:first-child { width: 50px; text-align: center; }
+#usersTableBody td:nth-child(2) { width: auto; }
+#usersTableBody td:nth-child(3) { width: auto; }
+#usersTableBody td:nth-child(4) { width: 150px; }
+#usersTableBody td:nth-child(5) { width: 120px; }
+#usersTableBody td:nth-child(6) { width: 200px; text-align: center; }
+
+/* ============================================
+   RESPONSIVE - TABLES
+   ============================================ */
+@media (max-width: 1024px) {
+  th {
+    max-width: 150px;
+    min-width: 70px;
+  }
+  
+  #resultsTable th {
+    min-width: 70px;
+  }
+  
+  #resultsTable th:nth-child(3) {
+    min-width: 80px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.75rem;
+    min-width: 400px;
+  }
+  
+  th, td {
+    padding: 10px 8px;
+  }
+  
+  #resultsTable th,
+  #resultsTable td {
+    padding: 10px 8px;
+    font-size: 0.75rem;
+  }
+  
+  #resultsTable .score-input {
+    max-width: 70px;
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  th {
+    font-size: 0.7rem;
+    padding: 10px 6px;
+    letter-spacing: 0.3px;
+    max-width: 120px;
+    min-width: 60px;
+  }
+  
+  #resultsTable th {
+    font-size: 0.65rem;
+    padding: 8px 4px;
+    min-width: 70px;
+  }
+  
+  /* Column widths on mobile */
+  #studentsTable th:first-child,
+  #studentsTable td:first-child { width: 40px; }
+  #studentsTable th:nth-child(3),
+  #studentsTable td:nth-child(3) { width: 60px; }
+  #studentsTable th:nth-child(4),
+  #studentsTable td:nth-child(4) { width: 120px; }
+  #studentsTable th:nth-child(5),
+  #studentsTable td:nth-child(5) { width: 150px; }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 0.6875rem;
+    min-width: 300px;
+  }
+  
+  th, td {
+    padding: 8px 6px;
+  }
+  
+  #resultsTable th,
+  #resultsTable td {
+    padding: 8px 6px;
+    font-size: 0.6875rem;
+  }
+  
+  #resultsTable .score-input {
+    max-width: 60px;
+    padding: 4px;
+    font-size: 11px;
+  }
+  
+  th {
+    font-size: 0.6rem;
+    padding: 8px 4px;
+    max-width: 100px;
+    min-width: 50px;
+  }
+  
+  #resultsTable th {
+    font-size: 0.55rem;
+    padding: 6px 3px;
+    min-width: 60px;
+  }
+  
+  /* Column widths on small mobile */
+  #studentsTable th:first-child,
+  #studentsTable td:first-child { width: 30px; }
+  #studentsTable th:nth-child(3),
+  #studentsTable td:nth-child(3) { width: 50px; }
+  #studentsTable th:nth-child(4),
+  #studentsTable td:nth-child(4) { width: 100px; }
+  #studentsTable th:nth-child(5),
+  #studentsTable td:nth-child(5) { width: 120px; }
+  
+  .btn-action {
+    padding: 4px 8px;
+    font-size: 0.6875rem;
+  }
+}
+
+/* ============================================
+   PRINT - TABLES
+   ============================================ */
+@media print {
+  .table-container {
+    overflow: visible !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  th {
+    background: #f0f0f0 !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  #resultsTable th {
+    border: 1px solid #ddd !important;
+  }
+  
+  #resultsTable td {
+    border: 1px solid #eee !important;
+  }
+}

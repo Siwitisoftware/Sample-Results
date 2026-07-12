@@ -1,0 +1,543 @@
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* ============================================
+   FADE IN
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.fade-in-delay-1 {
+  animation: fadeIn 0.3s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-2 {
+  animation: fadeIn 0.3s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-3 {
+  animation: fadeIn 0.3s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* ============================================
+   SLIDE IN
+   ============================================ */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   SLIDE DOWN
+   ============================================ */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* ============================================
+   FADE IN UP (AUTH)
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ============================================
+   MODAL SLIDE IN
+   ============================================ */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal-slide-in {
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+/* ============================================
+   SPIN (Loading)
+   ============================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.spin-fast {
+  animation: spin 0.5s linear infinite;
+}
+
+.spin-slow {
+  animation: spin 2s linear infinite;
+}
+
+/* ============================================
+   PULSE
+   ============================================ */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pulse-warning {
+  animation: pulseWarning 1s ease-in-out infinite;
+}
+
+@keyframes pulseWarning {
+  0% {
+    box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+    border-color: #ff1744;
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(247, 37, 133, 0.8);
+    border-color: #ff5252;
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+    border-color: #ff1744;
+  }
+}
+
+/* ============================================
+   SHAKE
+   ============================================ */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease forwards;
+}
+
+/* ============================================
+   BOUNCE
+   ============================================ */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s ease forwards;
+}
+
+/* ============================================
+   ROTATE (Background)
+   ============================================ */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+/* ============================================
+   TYPEWRITER
+   ============================================ */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary);
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--primary);
+  animation: typewriter 2s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+/* ============================================
+   GLOW
+   ============================================ */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(67, 97, 238, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(67, 97, 238, 0.6);
+  }
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   FLOAT
+   ============================================ */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   SCALE IN
+   ============================================ */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+/* ============================================
+   SLIDE IN LEFT
+   ============================================ */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease forwards;
+}
+
+/* ============================================
+   SLIDE OUT RIGHT
+   ============================================ */
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.3s ease forwards;
+}
+
+/* ============================================
+   NOTIFICATION TIMER
+   ============================================ */
+@keyframes timerProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.timer-progress {
+  animation: timerProgress 3s linear forwards;
+}
+
+/* ============================================
+   ENTER ACTIVE
+   ============================================ */
+.enter-active {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.exit-active {
+  animation: fadeIn 0.3s ease reverse forwards;
+}
+
+/* ============================================
+   HOVER ANIMATIONS
+   ============================================ */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3);
+}
+
+/* ============================================
+   SIDEBAR SLIDE
+   ============================================ */
+@keyframes sidebarSlideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-slide-in {
+  animation: sidebarSlideIn 0.3s ease forwards;
+}
+
+@keyframes sidebarSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.sidebar-slide-out {
+  animation: sidebarSlideOut 0.3s ease forwards;
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: #e0e0e0;
+  background-image: linear-gradient(90deg, #e0e0e0 0px, #f0f0f0 40px, #e0e0e0 80px);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* ============================================
+   PROGRESS BAR ANIMATION
+   ============================================ */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress-fill-animated {
+  animation: progressFill 2s ease forwards;
+}
+
+/* ============================================
+   CONFETTI (Celebration)
+   ============================================ */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  animation: confettiFall 3s ease-in forwards;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* ============================================
+   RIPPLE
+   ============================================ */
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: ripple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ============================================
+   TOAST SLIDE
+   ============================================ */
+@keyframes toastSlide {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-slide {
+  animation: toastSlide 0.3s ease forwards;
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.toast-slide-out {
+  animation: toastSlideOut 0.3s ease forwards;
+}

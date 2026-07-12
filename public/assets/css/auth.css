@@ -1,0 +1,459 @@
+/* ============================================
+   AUTH PAGES - LOGIN, REGISTER, FORGOT PASSWORD
+   ============================================ */
+
+/* Override body background for auth pages */
+body:has(#auth.container:not(.hidden)) {
+  background: white !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body:has(#register.container:not(.hidden)) {
+  background: white !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body:has(#forgotPasswordModal.container:not(.hidden)) {
+  background: white !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Auth containers - full screen */
+#auth.container,
+#register.container,
+#forgotPasswordModal.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: white !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Auth headers - white background */
+#auth .header,
+#register .header,
+#forgotPasswordModal .header {
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 30px 24px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+#auth .header h2,
+#register .header h2,
+#forgotPasswordModal .header h2 {
+  color: #4361ee;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#auth .header p,
+#register .header p,
+#forgotPasswordModal .header p {
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Slideshow container for auth */
+#auth .slideshow-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#auth .slideshow-inner {
+  height: 280px;
+}
+
+#auth .slide img {
+  border-radius: 16px;
+}
+
+#auth .slideshow-dots {
+  bottom: 12px;
+}
+
+#auth .dot {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#auth .dot.active {
+  background-color: #4361ee;
+}
+
+#auth .slideshow-prev,
+#auth .slideshow-next {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+#auth .slideshow-prev:hover,
+#auth .slideshow-next:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#auth .slide-caption {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+#auth .slide-caption h3 {
+  font-size: 1rem;
+  margin: 0 0 3px 0;
+}
+
+#auth .slide-caption p {
+  font-size: 0.75rem;
+}
+
+/* Auth form containers */
+#auth .form-container,
+#register .form-container,
+#forgotPasswordModal .form-container {
+  background: white;
+  border-radius: 0 0 20px 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Register form container - wider */
+#register .form-container {
+  max-width: 600px;
+}
+
+/* Remove footer from auth pages */
+#auth .footer,
+#register .footer,
+#forgotPasswordModal .footer {
+  display: none;
+}
+
+/* Auth password field */
+#auth .password-field,
+#register .password-field,
+#forgotPasswordModal .password-field {
+  position: relative;
+}
+
+#auth .password-input-wrapper,
+#register .password-input-wrapper,
+#forgotPasswordModal .password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#auth .password-input-wrapper input,
+#register .password-input-wrapper input,
+#forgotPasswordModal .password-input-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+#auth .toggle-password,
+#register .toggle-password,
+#forgotPasswordModal .toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+#auth .toggle-password:hover,
+#register .toggle-password:hover,
+#forgotPasswordModal .toggle-password:hover {
+  color: #4361ee;
+}
+
+/* Register password strength */
+#register .password-strength-container {
+  margin-top: 8px;
+}
+
+#register .password-strength-bar {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#register .password-strength-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background 0.3s ease;
+  border-radius: 4px;
+}
+
+#register .password-strength-fill.weak {
+  width: 25%;
+  background: #f44336;
+}
+
+#register .password-strength-fill.fair {
+  width: 50%;
+  background: #ff9800;
+}
+
+#register .password-strength-fill.good {
+  width: 75%;
+  background: #ffeb3b;
+}
+
+#register .password-strength-fill.strong {
+  width: 100%;
+  background: #4caf50;
+}
+
+#register .password-strength-text {
+  font-size: 10px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+#register .password-strength-text.weak { color: #f44336; }
+#register .password-strength-text.fair { color: #ff9800; }
+#register .password-strength-text.good { color: #856404; }
+#register .password-strength-text.strong { color: #4caf50; }
+
+#register .password-hint {
+  font-size: 11px;
+  color: #666;
+  display: block;
+  margin-top: 6px;
+}
+
+/* Register terms container */
+#register .terms-container {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #e2e8f0;
+  max-height: none;
+  overflow-y: visible;
+}
+
+#register .terms-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4361ee;
+  font-size: 14px;
+}
+
+#register .terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#register .term-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+#register .term-item:last-child {
+  border-bottom: none;
+}
+
+#register .term-item i {
+  color: #4caf50;
+  font-size: 14px;
+  width: 20px;
+}
+
+#register .terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 15px 0 5px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 10px;
+}
+
+#register .terms-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+#register .checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+#register .terms-checkbox:hover input ~ .checkmark {
+  border-color: #4361ee;
+}
+
+#register .terms-checkbox input:checked ~ .checkmark {
+  background-color: #4361ee;
+  border-color: #4361ee;
+}
+
+#register .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+#register .terms-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+#register .terms-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+#register .terms-text {
+  font-size: 13px;
+  color: #334155;
+}
+
+#register .terms-text strong {
+  color: #4361ee;
+}
+
+/* Forgot password specific */
+#forgotPasswordModal .input-group small {
+  color: #666;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #auth .slideshow-inner {
+    height: 220px;
+  }
+  
+  #auth .form-container,
+  #register .form-container,
+  #forgotPasswordModal .form-container {
+    padding: 24px;
+  }
+  
+  #auth .header,
+  #register .header,
+  #forgotPasswordModal .header {
+    padding: 20px 24px;
+  }
+  
+  #auth .header h2,
+  #register .header h2,
+  #forgotPasswordModal .header h2 {
+    font-size: 1.3rem;
+  }
+  
+  #register .term-item {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+  
+  #register .terms-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #auth .slideshow-inner {
+    height: 180px;
+  }
+  
+  #auth .form-container,
+  #register .form-container,
+  #forgotPasswordModal .form-container {
+    padding: 20px;
+  }
+  
+  #auth .header,
+  #register .header,
+  #forgotPasswordModal .header {
+    padding: 16px 20px;
+  }
+  
+  #auth .header h2,
+  #register .header h2,
+  #forgotPasswordModal .header h2 {
+    font-size: 1.1rem;
+  }
+  
+  #auth .header p,
+  #register .header p,
+  #forgotPasswordModal .header p {
+    font-size: 0.75rem;
+  }
+  
+  #auth .slide-caption {
+    padding: 8px;
+  }
+  
+  #auth .slide-caption h3 {
+    font-size: 0.8rem;
+  }
+  
+  #auth .slide-caption p {
+    font-size: 0.65rem;
+  }
+  
+  #register .term-item {
+    font-size: 11px;
+    padding: 5px 0;
+  }
+  
+  #register .terms-container {
+    padding: 12px;
+  }
+  
+  #register .terms-text {
+    font-size: 12px;
+  }
+}
